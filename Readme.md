@@ -56,6 +56,7 @@ npm install
 # Start the development server
 npm run dev
 
+```
 
 ✨ Acknowledgments
 A big thank you to Hitesh Choudhary and Chai aur Code for making web development fun and easy to understand.
