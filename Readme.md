@@ -45,7 +45,7 @@ In this series, I’m learning:
 ## 💡 How to Run Locally
 ```bash
 # Clone this repository
-git clone https://github.com/<your-username>/react-learning.git
+git clone https://github.com/vishaljati/react-learning.git
 
 # Navigate into a project folder
 cd react-learning/02-projects/counter
@@ -60,8 +60,9 @@ npm run dev
 
 ✨ Acknowledgments
 A big thank you to Hitesh Choudhary and Chai aur Code for making web development fun and easy to understand.
+
 Check out the full React.js playlist here:
-👉 Chai aur Code - React.js Playlist (https://www.youtube.com/playlist?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige)
+👉 Chai aur Code - [React.js Playlist](https://www.youtube.com/playlist?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige)
 
 📬 Connect With Me
 GitHub: [vishaljati](https://github.com/vishaljati) 
