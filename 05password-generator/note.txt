@@ -1,0 +1,110 @@
+React Hooks Notes:
+
+1) useState
+
+Purpose: Manage state in functional components.
+
+Key points:
+
+Returns an array: [stateValue, setStateFunction].
+
+State updates cause component re-render.
+
+Useful for UI data (inputs, toggles, counters).
+
+Example:
+
+const [count, setCount] = useState(0);
+setCount(count + 1);
+
+2) useEffect
+
+Purpose: Handle side effects such as API calls, event listeners, subscriptions, timers.
+
+Key points:
+
+Runs after rendering by default.
+
+Dependency array controls re-run behavior.
+
+Empty array [] means run only once (component mount).
+
+Cleanup function used to remove effects.
+
+Example:
+
+useEffect(() => {
+  console.log("Effect runs");
+  return () => console.log("Cleanup runs");
+}, []);
+
+3) useRef
+
+Purpose: Access or store mutable values without re-rendering.
+
+Key points:
+
+Commonly used to get DOM element reference.
+
+Can store values that persist across renders.
+
+Changes do not trigger re-renders.
+
+Example:
+
+const inputRef = useRef(null);
+<input ref={inputRef} />
+
+4) useCallback
+
+Purpose: Memoize a function so it is not recreated on every render.
+
+Key points:
+
+Prevents unnecessary re-renders in child components.
+
+Useful when passing functions as props.
+
+Accepts dependency array similar to useEffect.
+
+Example:
+
+const handleClick = useCallback(() => {
+  console.log("Clicked");
+}, []);
+
+Window Object:
+In web browsers, the window object is a global object representing the browser window or tab.
+ It provides properties and methods to control the browser environment, access the Document 
+ Object Model (DOM), and interact with user actions.
+
+window.navigator:
+The `window.navigator` object provides information about the user's browser and operating system.
+ It can be used to detect the browser type, version, platform, and other details.
+
+
+ | Property                            | Description                                                 |
+| ----------------------------------- | ----------------------------------------------------------- |
+| `window.document`                   | Represents the web page DOM loaded in the window            |
+| `window.location`                   | Provides info about the current URL and allows redirection  |
+| `window.history`                    | Controls browser history (forward, back navigation)         |
+| `window.navigator`                  | Provides browser and system information                     |
+| `window.screen`                     | Provides user screen dimensions and color depth             |
+| `window.localStorage`               | Stores data in browser permanently (no expiration)          |
+| `window.sessionStorage`             | Stores data only for the current session/tab                |
+| `window.innerWidth` / `innerHeight` | Width & height of the content area inside the window        |
+| `window.outerWidth` / `outerHeight` | Full width & height of the browser window including toolbar |
+| `window.console`                    | Access browser debugging console                            |
+| `window.alert()`                    | Displays an alert dialog box                                |
+| `window.confirm()`                  | Displays a confirmation dialog box                          |
+| `window.prompt()`                   | Displays a prompt dialog box for user input                 |
+
+Important Sub-objects
+
+- `window.navigator`: Information about the browser and OS
+- `window.location`: Current URL and redirection methods    
+- `window.document`: The DOM of the loaded web page
+- `window.localStorage` and `window.sessionStorage`: Web storage for persisting data
+- `window.history`: Browser navigation history control
+- `window.screen`: User screen properties
+- `window.console`: Debugging console access
