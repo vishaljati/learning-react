@@ -32,10 +32,9 @@ export class AuthService {
             
         }
     }
-    async userLogin(){
+    async userLogin({email,password}){
     try {
-         return this.account
-                .createEmailPasswordSession({email,password})
+         return this.account.createEmailPasswordSession({email,password})
     } catch (error) {
             throw error
             
@@ -44,17 +43,19 @@ export class AuthService {
         
    async getLoggedInUser(){
      try {
-        await this.account.get()
+       return await this.account.get()
      } catch (error) {
-        throw new Error("Appwrite error in getLoggedInUser",error)
+       console.log("Appwrite error in getLoggedInUser",error)
      }
      return null
    }
+
    async logOut(){
      try {
         await this.account.deleteSessions()
      } catch (error) {
-         throw new Error("Appwrite error in log out",error)
+         console.log("Appwrite Service Error",error);
+         
      }
    }
   
