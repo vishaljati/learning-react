@@ -20,6 +20,7 @@ export class Service {
          
      }
      
+      //DB operations
      async createPost({title,slug,content,featuredImage,status,userId}){
         try {
             return await this.databases.createDocument({
@@ -100,6 +101,8 @@ export class Service {
         }
     }
     
+    //Storage operations
+
     async uploadFile(file){
      try {
        return await this.storage.createFile({
