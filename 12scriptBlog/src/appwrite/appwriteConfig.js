@@ -1,4 +1,4 @@
-import config from "../config/config"
+import config from "../env-config/config.js"
 import {Client,ID,Databases,Storage, Query} from "appwrite"
 
 

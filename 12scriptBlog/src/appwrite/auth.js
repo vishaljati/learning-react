@@ -1,4 +1,4 @@
-import config from "../config/config"
+import config from "../env-config/config.js"
 import { Client, ID, Account } from "appwrite";
 
 export class AuthService {
@@ -33,21 +33,21 @@ export class AuthService {
         }
     }
     async userLogin({email,password}){
-    try {
-         return this.account.createEmailPasswordSession({email,password})
-    } catch (error) {
-            throw error
-            
-    }
+      try {
+          return this.account.createEmailPasswordSession({email,password})
+      } catch (error) {
+              throw error
+              
+      }
   }
         
    async getLoggedInUser(){
-     try {
-       return await this.account.get()
-     } catch (error) {
-       console.log("Appwrite error in getLoggedInUser",error)
-     }
-     return null
+      try {
+        return await this.account.get()
+      } catch (error) {
+        console.log("Appwrite error in getLoggedInUser",error)
+      }
+      return null
    }
 
    async logOut(){
