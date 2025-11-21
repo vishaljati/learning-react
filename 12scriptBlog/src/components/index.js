@@ -3,8 +3,9 @@ import Footer from "./Footer/Footer";
 import Logo from "./Logo/Logo";
 import Container from "./Container/Container";
 import LogoutBtn from "./Header/LogoutBtn"
-import Button from "./Button/Button"
-import Input from "./Input/Input"
+import Button from "./BasicComp/Button"
+import Input from "./BasicComp/Input"
+import Select from "./BasicComp/Select"
 
 
 
@@ -15,7 +16,8 @@ export {
     Container,
     LogoutBtn,
     Button,
-    Input
+    Input,
+    Select
 
 
 }
