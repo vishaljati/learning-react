@@ -9,7 +9,7 @@ import Select from "./BasicComp/Select"
 import Postcard from './Postcard/Postcard'
 import Login from "./Login/Login"
 import Signup from './Signup/Signup'
-
+import Protected from './Container/AuthLayout'
 
 export {
     Header,
@@ -22,7 +22,8 @@ export {
     Select,
     Postcard,
     Login,
-    Signup
+    Signup,
+    Protected
 
 
 }
