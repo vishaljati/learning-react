@@ -6,7 +6,9 @@ import LogoutBtn from "./Header/LogoutBtn"
 import Button from "./BasicComp/Button"
 import Input from "./BasicComp/Input"
 import Select from "./BasicComp/Select"
-
+import Postcard from './Postcard/Postcard'
+import Login from "./Login/Login"
+import Signup from './Signup/Signup'
 
 
 export {
@@ -17,7 +19,10 @@ export {
     LogoutBtn,
     Button,
     Input,
-    Select
+    Select,
+    Postcard,
+    Login,
+    Signup
 
 
 }
