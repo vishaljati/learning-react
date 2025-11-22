@@ -18,7 +18,7 @@ function Login() {
             setError("")
             const session=await authService.userLogin(data)
             if (session) {
-                const userData=authService.getLoggedInUser()
+                const userData=await authService.getLoggedInUser()
                 if(userData) dispatch(authLogin(userData))
                 navigate("/")
             }
