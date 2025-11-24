@@ -10,6 +10,7 @@ import Postcard from './Postcard/Postcard'
 import Login from "./Login/Login"
 import Signup from './Signup/Signup'
 import Protected from './Container/AuthLayout'
+import RTE from "./Real-Time-Editor/RTE"
 
 export {
     Header,
@@ -23,7 +24,8 @@ export {
     Postcard,
     Login,
     Signup,
-    Protected
+    Protected,
+    RTE 
 
 
 }
