@@ -11,6 +11,7 @@ import Login from "./Login/Login"
 import Signup from './Signup/Signup'
 import Protected from './Container/AuthLayout'
 import RTE from "./Real-Time-Editor/RTE"
+import PostForm from "./Post-form/PostForm"
 
 export {
     Header,
@@ -25,7 +26,8 @@ export {
     Login,
     Signup,
     Protected,
-    RTE 
+    RTE ,
+    PostForm
 
 
 }
