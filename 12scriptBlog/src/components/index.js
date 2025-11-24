@@ -9,9 +9,10 @@ import Select from "./BasicComp/Select"
 import Postcard from './Postcard/Postcard'
 import Login from "./Login/Login"
 import Signup from './Signup/Signup'
-import Protected from './Container/AuthLayout'
+import AuthLayout from './Container/AuthLayout'
 import RTE from "./Real-Time-Editor/RTE"
 import PostForm from "./Post-form/PostForm"
+
 
 export {
     Header,
@@ -25,7 +26,7 @@ export {
     Postcard,
     Login,
     Signup,
-    Protected,
+    AuthLayout,
     RTE ,
     PostForm
 
