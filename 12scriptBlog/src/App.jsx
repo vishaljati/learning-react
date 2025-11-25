@@ -6,6 +6,7 @@ import authService from './appwrite/auth.js'
 import {login,logout} from "./features/authSlicer.js"
 import { Header,
          Footer } from "./components"
+import { Outlet } from 'react-router-dom'
 
 function App() {
  
@@ -31,7 +32,7 @@ function App() {
      <div className='w-full block'>
        <Header/>
        <main>
-         {/* <Outlet/> */}
+         <Outlet/>
        </main>
        <Footer/>
      </div>

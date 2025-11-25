@@ -14,6 +14,7 @@ import RTE from "./Real-Time-Editor/RTE"
 import PostForm from "./Post-form/PostForm"
 
 
+
 export {
     Header,
     Footer ,
@@ -26,9 +27,9 @@ export {
     Postcard,
     Login,
     Signup,
-    AuthLayout,
+   AuthLayout,
     RTE ,
-    PostForm
-
+    PostForm,
+   
 
 }

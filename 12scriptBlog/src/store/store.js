@@ -3,7 +3,7 @@ import authReducer from "../features/authSlicer.js"
 
 const store = configureStore({
     reducer:{
-       authReducer
+       auth:authReducer
     }
 })
 

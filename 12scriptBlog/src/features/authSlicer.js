@@ -8,18 +8,18 @@ const initialState = {
 const authSlicer = createSlice({
     name: "auth",
     initialState,
-    reducer: {
+    reducers: {
         login: (state,action)=>{
              state.isLoggedIn=true
              state.userData=action.payload.userData
         },
-        logout: (state)=>{
+        logout: (state,action)=>{
              state.isLoggedIn=false
              state.userData=null
         }
     }
 })
 
-export const {login,logout}=authSlicer.actions
+export const {login,logout}=authSlicer.actions;
 
-export default authSlicer.reducer
+export default authSlicer.reducer;
