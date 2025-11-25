@@ -43,7 +43,13 @@ export class AuthService {
         
    async getLoggedInUser(){
       try {
-        return await this.account.get()
+        const getUser= await this.account.get()
+        if (getUser) {
+          return getUser;
+        }else{
+          console.log("No login user found");
+          return null
+        }
       } catch (error) {
         console.log("Appwrite error in getLoggedInUser",error)
       }
