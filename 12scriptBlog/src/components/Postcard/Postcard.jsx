@@ -8,7 +8,7 @@ function Postcard(
     featuredImage}
 ) {
 
-  console.log(url);
+  
   
   return (
     <Link to={`/post/${$id}`}>

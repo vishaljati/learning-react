@@ -6,23 +6,25 @@ import parse from "html-react-parser"
 import { useSelector } from "react-redux"
 
 function Post() {
+
     const [post,setPost]=useState(null)
     const navigate=useNavigate()
     const {slug}=useParams()
     const userData= useSelector((state)=>state.auth.userData)
-    const isAuthor = post && userData? (post.userId===userData.$id):false
-
-    useEffect((slug)=>{
+    const isAuthor = (post && userData)? (post.userId===userData.$id):false
+    
+    console.log(slug);
+    
+    useEffect(()=>{
         if (slug) {
-             appwriteService.getPost(slug)
-                .then((post)=>{
+             appwriteService.getPost(slug).then((post)=>{
                     if(post) setPost(post)
                     else navigate('/')
                 })
         }else{
             navigate('/')
         }
-
+       
     },[slug,navigate])
 
     const deletePost = () => {
@@ -63,7 +65,8 @@ function Post() {
              </div>
         </Container>
     </div>
-  ):null
+  ): null
+
 }
 
 export default Post
