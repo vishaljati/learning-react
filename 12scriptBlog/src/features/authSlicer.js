@@ -11,7 +11,7 @@ const authSlicer = createSlice({
     reducers: {
         login: (state,action)=>{
              state.isLoggedIn=true
-             state.userData=action.payload.userData
+             state.userData=action.payload
         },
         logout: (state,action)=>{
              state.isLoggedIn=false

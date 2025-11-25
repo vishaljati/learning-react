@@ -6,20 +6,23 @@ import { useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
 function PostForm({post}) {
-     const {register,handleSubmit,watch,setValue,control,getValues}=useForm({
+     const {register, handleSubmit,watch,setValue,control,getValues}=useForm({
         defaultValues:{
             title:post?.title||"",
             slug:post?.slug||"",
             content:post?.content||"",
-            status:post?.status||"active"
+            status:post?.status||"active",
+            image:post?.featuredImage||""
         }
      })
      const navigate=useNavigate()
      const userData=useSelector((state)=>(state.auth.userData))
     
     const submit= async(data)=>{
+        console.log(data);
+        
          if (post) {
-            const file=data.image[0]? (await appwriteService.uploadFile(data.image[0])):null
+            const file=data.image[0]? await appwriteService.uploadFile(data.image[0]):null
             if(file){
                  await appwriteService.deleteFile(post.featuredImage)
             }
@@ -34,7 +37,7 @@ function PostForm({post}) {
 
 
          } else {
-            const file = data.image[0]? await appwriteService.uploadFile(data.image[0]):null
+            const file = await appwriteService.uploadFile(data.image[0])
             if (file) {
                 const fileId=file.$id
                 data.featuredImage=fileId
@@ -103,7 +106,7 @@ function PostForm({post}) {
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
-                    {...register("image", { required: !post })}
+                    {...register("image", { required: true })}
                 />
                 {post && (
                     <div className="w-full mb-4">
@@ -120,7 +123,8 @@ function PostForm({post}) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button 
+                type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>

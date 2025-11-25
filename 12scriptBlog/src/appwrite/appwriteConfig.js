@@ -77,11 +77,11 @@ export class Service {
     
     async getPost(slug){
         try {
-            return await this.databases.getDocument({
-                databaseId: config.appwriteDatabaseId,
-                collectionId: config.appwriteTableId,
-                documentId: slug
-                })
+            return await this.databases.getDocument(
+                   config.appwriteDatabaseId,
+                    config.appwriteTableId,
+                    slug
+            )
             } catch (error) {
             console.error("Appwrite error : fetching a post",error);
                 
@@ -132,10 +132,14 @@ export class Service {
    
     async getFilePreview(fileId){
         try {
-            return this.storage.getFilePreview({
-                   bucketId:config.appwriteBucketId,
-                   fileId
-            })
+            const res= this.storage.getFileView(
+            config.appwriteBucketId,
+            fileId
+        )
+        const href = (res && res.href) ? res.href : res;
+            console.log(href);
+            return href;
+            
         } catch (error) {
              console.error("Appwrite error : Previewing the file",error);
              return null
